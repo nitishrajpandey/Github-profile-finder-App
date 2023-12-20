@@ -1,2 +1,2 @@
 # Github-profile-finder-App
-work on progress
+# work under progress
