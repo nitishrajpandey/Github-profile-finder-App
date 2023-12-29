@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 function MainCard() {
   const search = useSelector((state) => state.search);
   const githubUserData = useSelector((state) => state.search.userData);
-  console.log(githubUserData);
   return (
     <div className="mt-20">
       <div className="px-5 xs:px-10">

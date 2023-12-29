@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 function RepoCard() {
   const RepoData = useSelector((state) => state.search);
-  console.log(RepoData.repoData);
   return (
     <div className="flex flex-wrap justify-center gap-10 w-[90%] gap-y-[60px] mx-auto">
       {RepoData.repoData.map((items) => (

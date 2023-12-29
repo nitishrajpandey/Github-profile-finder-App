@@ -1,61 +1,22 @@
-// import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
-
-
-
-// export const fetchGithubUser = createAsyncThunk("search/githubUserProfile", async (username) => {
-//     const { data } = await axios.get(`https://api.github.com/users/${username}`)
-//     return data
-// })
-
-// export const fetchGithubUserRepo = createAsyncThunk("search/githubUserRepo", async (username) => {
-//     const { data } = await axios.get(`https://api.github.com/users/${username}/repos`)
-//     return data
-// })
-
-
-// export const searchSlice = createSlice({
-//     name: "search",
-//     initialState: {
-//         isLoding: false,
-//         Data: null,
-//         isError: false
-//     },
-//     extraReducers: (builder) => {
-
-//         builder.addCase(fetchGithubUser.pending, (state) => {
-//             state.isLoding = true
-//         })
-
-//         builder.addCase(fetchGithubUser.fulfilled, (state, action) => {
-//             state.isLoding = false,
-//                 state.isError = false,
-//                 state.Data = action.payload
-//         })
-//         builder.addCase(fetchGithubUser.rejected, (state, action) => {
-//             state.isLoding = false,
-//                 console.log("error", action.payload)
-//             state.isError = true
-//         })
-//     }
-// })
-
-
-// export default searchSlice.reducer
-
-
-
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// require('dotenv').config()
+
+const config = {
+    headers: {
+        Authorization: `Token ${import.meta.env.VITE_GITHUB_TOKEN_KEY}`,
+    },
+};
+
 export const fetchGithubUserRepo = createAsyncThunk("search/githubUserRepo", async (username) => {
-    const { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
+    const { data } = await axios.get(`https://api.github.com/users/${username}/repos`, config);
     return data;
 });
 
 export const fetchGithubUser = createAsyncThunk("search/githubUser", async (username) => {
-    const { data } = await axios.get(`https://api.github.com/users/${username}`);
+    const { data } = await axios.get(`https://api.github.com/users/${username}`, config);
     return data;
 });
 
