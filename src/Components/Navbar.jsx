@@ -6,7 +6,7 @@ import { navlinksData } from "../ContextData/index";
 
 function Navbar() {
   return (
-    <div className="fixed top-0 w-full ">
+    <div className="fixed top-0 w-full bg-[#FDF8F5] z-50">
       <div className="bg-transparent flex justify-between items-center py-2 px-3 xs:px-5 ss:px-10">
         <div className="">
           <NavLink to={"/"} className={"flex items-center gap-2"}>

@@ -1,5 +1,6 @@
 // import React from 'react'
 
+import { Link } from "react-router-dom";
 import { githubnew, mainbg } from "../../../assets";
 import { mainpageData } from "../ContextData";
 
@@ -31,9 +32,11 @@ function MainPage() {
           </p>
         </div>
         <div className="text-center">
-          <button className="px-5 py-2 border-2 border-red-400 rounded-full ">
-            {mainpageData.butn}
-          </button>
+          <Link to={"/search"}>
+            <button className="px-5 py-2 border-2 border-red-400 rounded-full ">
+              {mainpageData.butn}
+            </button>
+          </Link>
         </div>
       </div>
     </div>
