@@ -8,7 +8,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { Home, Search } from "./pages/index.js";
+import { Battle, Home, Search } from "./pages/index.js";
 import { Provider } from "react-redux";
 import store from "./Store/store.js";
 
@@ -17,6 +17,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
       <Route path="/search" element={<Search />} />
+      <Route path="/battle" element={<Battle />} />
     </Route>
   )
 );
