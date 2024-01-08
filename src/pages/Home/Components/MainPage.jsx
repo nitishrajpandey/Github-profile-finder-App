@@ -10,7 +10,7 @@ function MainPage() {
       style={{ backgroundImage: `url(${mainbg})` }}
       className="w-full h-[100vh] bg-cover bg-center px-10"
     >
-      <div className=" ">
+      <div className="">
         <div className="flex justify-center mb-3 pt-24 md:pt-28 ">
           <img
             className="w-[200px] md:w-[250px] lg:w-[300px2]"
